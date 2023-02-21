@@ -1,0 +1,52 @@
+%Volerra食饵_捕食者模型
+$$
+\begin{array}{r}
+	\dot{x}(t)=x(r-a y)=r x-a x y \\
+	\dot{y}(i)=y(-d+b x)=-d y+b x y
+\end{array}
+$$
+
+%x：食饵数量 km^2
+%y：捕食者数量 k
+%r：食饵增长系数 
+%a：捕食者掠取食饵能力系数
+%d：捕食者独自存在时的死亡系数
+%b：食饵对捕食者的供养能力系数                                                           c
+
+
+%Volerra食饵_捕食者模型+logistic项
+$$
+\begin{aligned}
+	& \dot{x}_1(t)=r_1 x_1\left(1-\frac{x_1}{N_1}-\sigma_1 \frac{x_2}{N_2}\right) \\
+	& \dot{x}_2(t)=r_2 x_2\left(-1+\sigma_2 \frac{x_1}{N_1}-\frac{x_2}{N_2}-3m\right)
+\end{aligned}
+$$
+
+%x1：草地面积 km^2
+%x2：羊净产量 k
+%r1：草地生长参数
+%r2：羊生长参数
+%N1：草地饱和产量 km^2
+%N2：羊饱和产量（人为控制）k
+%σ1：草的产量对羊的供养能力系数 
+%σ2：羊的捕食能力系数
+%m：龙的捕食量 k
+
+%改进CASA模型估算NPP（净生产力）
+$$
+\begin{aligned}
+	\operatorname{NPP}(x, t)= & \operatorname{FAPAR}(x, t) \times \varepsilon_{\max }(x, t) \times \\
+	& T_{\varepsilon 1}(x, t) \times T_{\varepsilon 2}(x, t) \times W_{\varepsilon}(x, t)
+\end{aligned}
+$$
+
+%植被吸收的光合有效辐射（FAPAR）W
+%最大光能利用率（εmax）%
+%温度胁迫系数（Tε1 、Tε2）
+%水分胁迫系数（Wε）
+$$
+\begin{aligned}
+r1\propto\operatorname{NPP}
+\end{aligned}
+$$
+%草地生长参数正比于NPP
