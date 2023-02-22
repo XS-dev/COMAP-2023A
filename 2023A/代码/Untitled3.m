@@ -1,0 +1,105 @@
+fd=1/12;
+Rt1=1:1:45;
+b=1:1:45;
+for i=1:1:45
+    b(i)=i;
+    N=i;
+k=0.07;
+r1=0.105;
+r2=0.105;
+K1=round(k*N)*8000/N;
+K2=3538*round((1-k)*N)/N;
+s1=-(N-1)*0.04*(1./(exp(-(600-200)./40)+1)-3/4);
+s2=-(N-1)*0.04*(1./(exp(-(600-200)./40)+1)-3/4);
+N10=round(k*N)*8000/N;
+N20=round((1-k)*N)*8000/N;
+t0=0;
+tf=4/fd;
+dt=1;
+[t, N1, N2] = population_competition(r1, r2, K1, K2, s1, s2, N10, N20, t0, tf, dt);
+N3=N1+N2;
+%figure
+%plot(t, N1, t, N2, t, N3,'LineWidth', 3), grid on, xlabel('t'), ylabel('N'), legend('N1', 'N2','N');
+Rt1(i)=-8000*400/(N3(tf)-8000);
+end
+Rt1(1)=3538/8000;
+Rt1(2)=3538/8000;
+Rt1(3)=3538/8000;
+Rt1(4)=3538/8000;
+Rt1(5)=3538/8000;
+Rt1(6)=3538/8000;
+Rt1(7)=3538/8000;
+figure 
+plot(b,Rt1,'b.-')
+xlabel('N')
+ylabel('Rt/mm')
+fd=1/6;
+Rt1=1:1:45;
+b=1:1:45;
+for i=1:1:45
+    b(i)=i;
+    N=i;
+k=0.07;
+r1=0.105;
+r2=0.105;
+K1=round(k*N)*8000/N;
+K2=3538*round((1-k)*N)/N;
+s1=-(N-1)*0.04*(1./(exp(-(600-200)./40)+1)-3/4);
+s2=-(N-1)*0.04*(1./(exp(-(600-200)./40)+1)-3/4);
+N10=round(k*N)*8000/N;
+N20=round((1-k)*N)*8000/N;
+t0=0;
+tf=4/fd;
+dt=1;
+[t, N1, N2] = population_competition(r1, r2, K1, K2, s1, s2, N10, N20, t0, tf, dt);
+N3=N1+N2;
+%figure
+%plot(t, N1, t, N2, t, N3,'LineWidth', 3), grid on, xlabel('t'), ylabel('N'), legend('N1', 'N2','N');
+Rt1(i)=-8000*400/(N3(tf)-8000);
+end
+Rt1(1)=3538/8000;
+Rt1(2)=3538/8000;
+Rt1(3)=3538/8000;
+Rt1(4)=3538/8000;
+Rt1(5)=3538/8000;
+Rt1(6)=3538/8000;
+Rt1(7)=3538/8000;
+figure 
+plot(b,Rt1,'b.-')
+xlabel('N')
+ylabel('Rt/mm')
+fd=1;
+Rt1=1:1:45;
+b=1:1:45;
+for i=1:1:45
+    b(i)=i;
+    N=i;
+k=0.07;
+r1=0.105;
+r2=0.105;
+K1=round(k*N)*8000/N;
+K2=3538*round((1-k)*N)/N;
+s1=-(N-1)*0.04*(1./(exp(-(600-200)./40)+1)-3/4);
+s2=-(N-1)*0.04*(1./(exp(-(600-200)./40)+1)-3/4);
+N10=round(k*N)*8000/N;
+N20=round((1-k)*N)*8000/N;
+t0=0;
+tf=4/fd;
+dt=1;
+[t, N1, N2] = population_competition(r1, r2, K1, K2, s1, s2, N10, N20, t0, tf, dt);
+N3=N1+N2;
+%figure
+%plot(t, N1, t, N2, t, N3,'LineWidth', 3), grid on, xlabel('t'), ylabel('N'), legend('N1', 'N2','N');
+Rt1(i)=-8000*400/(N3(tf)-8000);
+end
+Rt1(1)=3538/8000;
+Rt1(2)=3538/8000;
+Rt1(3)=3538/8000;
+Rt1(4)=3538/8000;
+Rt1(5)=3538/8000;
+Rt1(6)=3538/8000;
+Rt1(7)=3538/8000;
+figure 
+plot(b,Rt1,'b.-')
+xlabel('N')
+ylabel('Rt/mm')
